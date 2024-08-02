@@ -1,0 +1,1 @@
+If deleted, laravel will throw an error

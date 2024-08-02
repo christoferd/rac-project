@@ -1,0 +1,1 @@
+<x-vaadin-car {!! $attributes !!}/>

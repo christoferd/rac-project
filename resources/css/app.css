@@ -1,0 +1,348 @@
+@tailwind base;
+
+:root {
+    --primary: #e1e1e1;
+    --secondary: #aaaaaa;
+}
+
+/* https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply */
+@layer base {
+
+    /* TW Elements */
+    html {
+        @apply text-neutral-800;
+    }
+
+    /* TW Elements */
+    html.dark {
+        @apply text-neutral-50;
+        @apply bg-neutral-800;
+    }
+
+    footer {
+        @apply p-4 text-xxs text-gray-400 text-center
+    }
+
+    /* Nav */
+    nav a {
+        text-decoration: none;
+    }
+
+    #application-sidebar nav > ul a {
+        @apply flex items-center gap-x-3.5 py-2 px-2.5 qs:text-sm text-slate-700 rounded-md hover:bg-gray-200
+    }
+
+    #application-sidebar nav > ul a.active {
+        background: #efefef;
+        font-weight: 700;
+    }
+
+    #application-sidebar nav > ul a:hover {
+        @apply bg-gray-100;
+    }
+
+    #navUser a {
+        text-decoration-line: none;
+    }
+
+    /* Helpers */
+    .ptr {
+        cursor: pointer
+    }
+
+    /* HTML elements */
+    h1 {
+        @apply font-semibold text-2xl text-gray-800 leading-tight
+    }
+
+    h2 {
+        @apply font-semibold text-xl text-gray-800 leading-tight
+    }
+
+    h3 {
+        @apply font-semibold text-lg text-gray-800 leading-tight
+    }
+
+    a {
+        @apply text-blue-600 underline;
+    }
+
+    /* Table */
+    table {
+        @apply divide-y divide-gray-200 dark:divide-gray-700
+    }
+
+    table th {
+        @apply px-4 py-3 text-xs font-medium text-gray-500 uppercase
+    }
+
+    table th > a {
+        @apply no-underline text-inherit cursor-pointer
+    }
+
+    table th > a:hover {
+        @apply underline
+    }
+
+    table tbody {
+        @apply divide-y divide-gray-200 text-gray-800
+    }
+
+    table tbody td {
+        @apply px-4 py-2 whitespace-nowrap qs:text-sm font-medium
+    }
+
+    tbody > tr {
+        @apply odd:bg-white even:bg-gray-100 dark:odd:bg-slate-900 dark:even:bg-slate-800
+    }
+
+    th {
+        @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase
+    }
+
+
+    td {
+        @apply px-6 py-4 whitespace-nowrap qs:text-sm text-gray-800 dark:text-gray-200
+    }
+
+    /* Form related */
+    input[type=checkbox] {
+        @apply cursor-pointer
+    }
+
+    /* .form */
+    .form label {
+        @apply block text-xs font-normal text-gray-700 mb-0.5 pl-0.5 leading-none dark:text-white
+    }
+
+    .form input[type=text],
+    .form input[type=email],
+    .form input[type=number],
+    .form input[type=search],
+    .form input[type=password] {
+        @apply py-2 px-3 block w-full border-gray-200 rounded-md qs:text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+    }
+
+    /* Form Elements */
+    input, textarea {
+        @apply placeholder:text-gray-300
+    }
+
+    input[type=date] {
+        @apply border border-gray-200 rounded p-1.5 px-2
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=number],
+    input[type=search],
+    input[type=password] {
+        @apply py-2 px-3 block w-full border-gray-200 rounded-md qs:text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+    }
+
+    input, select, textarea {
+        /* remove thick black outline on focus */
+        @apply focus:outline-1 focus:outline-gray-200;
+    }
+
+    input[type="file"] {
+        @apply cursor-pointer
+    }
+
+    input.hidden-datepicker-input {
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    select {
+        @apply py-2 px-3 pr-9 block w-full border-gray-200 rounded-md qs:text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+    }
+
+    textarea {
+        @apply py-2 px-3 block w-full border-gray-200 rounded-md qs:text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+    }
+
+    /* Form misc */
+    p.input-error, span.error {
+        @apply text-red-600 qs:text-sm pt-1
+    }
+
+    /* My Offcanvas / Modals */
+    .modal-overlay {
+        /* 800vh will fix ISSUE: Overlay not covering whole screen WHEN zoom out on mobile */
+        height: 800vh;
+        width: 800vh;
+        @apply z-modal-overlay bg-gray-800 opacity-50 fixed top-0 left-0
+    }
+
+    /* Modal Message */
+    .data-saved-message {
+        display: none
+    }
+
+    .data-saved-message.show {
+        display: inline-block
+    }
+
+    /* PowerGrid */
+    td.whitespace-normal * {
+        white-space: normal !important;
+    }
+
+    /* Button */
+    button {
+        /* remove thick black outline on focus */
+        @apply focus:outline-1 focus:outline-offset-1 focus:outline-gray-200 cursor-pointer
+    }
+
+    button.btn, a.btn {
+        @apply inline-flex justify-center items-center rounded-md border-gray-200 text-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2 transition-all
+        py-1 px-2 gap-1 border text-sm
+        qs:py-2 qs:px-3 qs:gap-2 qs:border-2 qs:text-sm
+    }
+
+    button.btn.active, a.btn.active {
+        @apply border-gray-800
+    }
+
+    button.btn-icon-only, a.btn-icon-only {
+        @apply w-8 h-8 m-auto flex items-center border border-gray-300 rounded hover:bg-gray-200 hover:border-gray-500 hover:shadow-lg
+    }
+
+    button.btn-icon-only svg, a.btn-icon-only svg {
+        @apply m-auto w-5 h-5 text-gray-800
+    }
+
+    button.btn.save, a.btn.save {
+        @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all qs:text-sm dark:focus:ring-offset-gray-800
+    }
+
+    button[type="submit"] {
+        @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all qs:text-sm
+    }
+
+    /* - Button Disabled */
+    button:disabled, button[disabled],
+    a:disabled, a[disabled] {
+        @apply opacity-40 cursor-not-allowed
+    }
+
+    button.btn-icon-only:disabled, button.btn-icon-only[disabled] {
+        @apply opacity-40 cursor-not-allowed
+    }
+
+    .nowrap {
+        white-space: nowrap
+    }
+
+    .print-only {
+        display: none;
+    }
+
+    /* Pagination - Livewire */
+    span[aria-current="page"] > span {
+        background: #dddddd;
+        font-weight: bold;
+    }
+
+    /* Tooltip (Preline) */
+    .hs-tooltip-content {
+        @apply opacity-0 transition-opacity inline-block absolute invisible z-tooltip rounded py-1 px-2 bg-gray-900 text-white text-sm
+    }
+
+    /* Tooltip (Preline) */
+    div.hs-dropdown-menu a {
+        @apply flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 no-underline
+    }
+
+    /* Print */
+    @media print {
+        .print-only {
+            display: block !important;
+        }
+
+        .no-print {
+            display: none !important;
+        }
+
+        div.phpdebugbar {
+            display: none !important;
+        }
+
+        /* Tabs (Preline) - only the active tab */
+        nav[role="tablist"] button:not(.active) {
+            display: none
+        }
+
+        /* Calendar */
+        .calendar-week {
+            @apply border-gray-700;
+        }
+
+        .calendar-week .nav-buttons {
+            visibility: hidden
+        }
+
+        .calendar-week .time {
+            @apply text-gray-700
+        }
+
+        .calendar-week .grid-cell,
+        .calendar-week .grid-row,
+        .calendar-week .grid-row-top,
+        .calendar-week .grid-cell-col1,
+        .calendar-week .grid-cell-th {
+            /*print above*/
+            @apply border-gray-700
+        }
+    }
+
+    @media (max-width: 1200px) {
+        /* fix issue where calendar is off screen on smaller devices that can scroll calendar left/right */
+        .flatpickr-calendar, .flatpickr-calendar.open {
+            position: fixed !important;
+            top: 68px !important;;
+            left: 24px !important;;
+        }
+    }
+}
+
+/* Body */
+/* - Prevent scroll when modal open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Scrollbars */
+/* - Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* - Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 5px;
+    border: 2px solid var(--primary);
+}
+
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}

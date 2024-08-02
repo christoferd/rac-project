@@ -1,0 +1,1 @@
+TOUCH_ACTION_COMPUTE,RotateRecognizer,PinchRecognizer,SwipeRecognizer,DIRECTION_HORIZONTAL,PanRecognizer,DIRECTION_HORIZONTAL,TapRecognizer,TapRecognizer,PressRecognizer;

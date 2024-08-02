@@ -1,0 +1,39 @@
+{
+  "_preline-90866586.js": {
+    "file": "assets/preline-90866586.js",
+    "isDynamicEntry": true
+  },
+  "node_modules/hammerjs/src/hammer.js": {
+    "file": "assets/hammer-00353c4e.js",
+    "isEntry": true,
+    "src": "node_modules/hammerjs/src/hammer.js"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-add02fd3.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/css/spotlight-078.css": {
+    "file": "assets/spotlight-078-04d96f2f.css",
+    "isEntry": true,
+    "src": "resources/css/spotlight-078.css"
+  },
+  "resources/css/tippy-637.css": {
+    "file": "assets/tippy-637-50bcd8f5.css",
+    "isEntry": true,
+    "src": "resources/css/tippy-637.css"
+  },
+  "resources/js/app.js": {
+    "dynamicImports": [
+      "_preline-90866586.js"
+    ],
+    "file": "assets/app-97edc77a.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/preline.js": {
+    "file": "assets/preline-6c4249c6.js",
+    "isEntry": true,
+    "src": "resources/js/preline.js"
+  }
+}
